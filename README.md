@@ -23,26 +23,26 @@ node app.js
 
 
 # Construction
-www/
-├── app.js
-├── package.json
-├── public/
-│   ├── index.html
-│   ├── login.html
-│   ├── register.html
-│   ├── upload.html
-│   ├── games.html
-│   ├── game.html
-│   ├── admin.html
-│   ├── admin_login.html
-│   ├── css/
-│   │   ├── styles.css 
-│   │   ├── form.css
-│   │   ├── games.css
-│   │   └── admin.css 
-│   └── js/
-│       └── scripts.js
-├── data/
-│   ├── users.json
-│   └── games.json
-└── uploads/
+www/  
+├── app.js  
+├── package.json   
+├── public/  
+│   ├── index.html  
+│   ├── login.html  
+│   ├── register.html  
+│   ├── upload.html  
+│   ├── games.html  
+│   ├── game.html  
+│   ├── admin.html  
+│   ├── admin_login.html  
+│   ├── css/  
+│   │   ├── styles.css   
+│   │   ├── form.css  
+│   │   ├── games.css  
+│   │   └── admin.css   
+│   └── js/  
+│       └── scripts.js  
+├── data/  
+│   ├── users.json  
+│   └── games.json  
+└── uploads/  
