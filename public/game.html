@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>游戏详情 - BUAA游戏网</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 其他元数据 -->
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/games.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <a href="../index.html"><div class="logo">BUAA小游戏</div></a>
+            <ul class="nav-links">
+                <li><a href="/">首页</a></li>
+                <li><a href="/games.html">游戏列表</a></li>
+                <li><a href="/upload.html">上传游戏</a></li>
+                <li><a href="/creator.html">开发者计划</a></li>
+            </ul>
+            <div class="auth-buttons">
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+        <div class="sidebar">
+            <ul>
+                <li><a href="/">首页</a></li>
+                <li><a href="/games.html">游戏列表</a></li>
+                <li><a href="/upload.html">上传游戏</a></li>
+                <li><a href="/creator.html">开发者</a></li>
+            </ul>
+            <div class="auth-buttons-sidebar">
+            </div>
+        </div>
+        <div class="overlay"></div>
+    </header>
+
+    <section class="game-detail">
+        <h2 id="gameTitle">游戏名称</h2>
+        <div class="game-meta">
+        </div>
+        <iframe id="gameFrame" src=""></iframe>
+        <button id="fullscreenButton" class="fullscreen-button">全屏</button>
+        <h3>评分</h3>
+        <form id="rateForm">
+            <label>给游戏打分（1-5）：</label>
+            <input type="number" name="rating" min="1" max="5" required>
+            <button type="submit">提交评分</button>
+        </form>
+    </section>
+    <div class="donation-modal" style="display: none;">
+        <div class="donation-modal-content">
+            <span class="close-button">&times;</span>
+            <img src="" alt="捐赠二维码">
+        </div>
+    </div>
+
+
+    <footer>
+        <p>&copy; 2024 BUAA. 版权所有.</p>
+    </footer>
+
+    <script src="js/scripts.js"></script>
+</body>
+</html>

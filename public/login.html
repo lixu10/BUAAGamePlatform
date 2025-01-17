@@ -1,0 +1,60 @@
+<!-- public/login.html -->
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>登录 - BUAA游戏网</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/form.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <a href="../index.html"><div class="logo">BUAA小游戏</div></a>
+            <ul class="nav-links">
+                <li><a href="/">首页</a></li>
+                <li><a href="/games.html">游戏列表</a></li>
+                <li><a href="/upload.html">上传游戏</a></li>
+                <li><a href="/creator.html">开发者计划</a></li>
+            </ul>
+            <div class="auth-buttons">
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+        <div class="sidebar">
+            <ul>
+                <li><a href="/">首页</a></li>
+                <li><a href="/games.html">游戏列表</a></li>
+                <li><a href="/upload.html">上传游戏</a></li>
+                <li><a href="/creator.html">开发者</a></li>
+            </ul>
+            <div class="auth-buttons-sidebar">
+            </div>
+        </div>
+        <div class="overlay"></div>
+    </header>
+
+    <section class="form-section">
+        <form id="loginForm">
+            <h2>用户登录</h2>
+            <label>用户名：</label>
+            <input type="text" name="username" required>
+            <label>密码：</label>
+            <input type="password" name="password" required>
+            <button type="submit">登录</button>
+            <p>还没有账号？<a href="register.html">注册</a></p>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 BUAA. 版权所有.</p>
+    </footer>
+
+    <script src="js/scripts.js"></script>
+</body>
+</html>

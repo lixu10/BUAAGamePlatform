@@ -1,0 +1,66 @@
+/* 表单页面样式 */
+.form-section {
+    padding: 40px;
+    background-color: #f9f9f9;
+}
+
+form {
+    background-color: #fff;
+    padding: 40px 50px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 400px;
+    margin: 0 auto;
+}
+
+form h2 {
+    margin-bottom: 30px;
+    text-align: center;
+    color: #333;
+}
+
+form label {
+    display: block;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+form select,
+form input[type="text"],
+form input[type="password"],
+form input[type="email"],
+form input[type="file"],
+form input[type="number"],
+form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #d9d9d9;
+    border-radius: 4px;
+}
+
+form button {
+    width: 100%;
+    padding: 12px;
+    background-color: #1890ff;
+    border: none;
+    color: #fff;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #40a9ff;
+}
+
+form p {
+    text-align: center;
+    margin-top: 20px;
+    color: #555;
+}
+
+form p a {
+    color: #1890ff;
+    text-decoration: none;
+}

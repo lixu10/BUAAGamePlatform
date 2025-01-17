@@ -1,0 +1,160 @@
+[
+  {
+    "username": "管理员",
+    "password": "123456",
+    "email": "2510224829@qq.com",
+    "developerStatus": "已批准",
+    "realName": "李旭",
+    "phoneNumber": "15501235631",
+    "qqNumber": "2510224829",
+    "studentId": "24373099",
+    "applicationReason": "nb",
+    "isBanned": true
+  },
+  {
+    "username": "admin",
+    "password": "123456",
+    "email": "b@b.b",
+    "developerStatus": "已批准",
+    "realName": "坤徐",
+    "phoneNumber": "15501235631",
+    "qqNumber": "123456",
+    "studentId": "123456",
+    "applicationReason": "123456"
+  },
+  {
+    "username": "ykw",
+    "password": "123456",
+    "email": "123456@qq.com",
+    "developerStatus": "未申请",
+    "realName": "",
+    "phoneNumber": "",
+    "qqNumber": "",
+    "studentId": "",
+    "applicationReason": ""
+  },
+  {
+    "username": "root",
+    "password": "123456",
+    "email": "root@root.com",
+    "developerStatus": "已批准",
+    "realName": "薛维旭",
+    "phoneNumber": "18888888888",
+    "qqNumber": "88888888",
+    "studentId": "114514",
+    "applicationReason": "nmb"
+  },
+  {
+    "username": "神坑之逗",
+    "password": "123456",
+    "email": "skzd@skzd.me",
+    "developerStatus": "已批准",
+    "realName": "李亚骏",
+    "phoneNumber": "0",
+    "qqNumber": "3366907994",
+    "studentId": "24373117",
+    "applicationReason": "我是南通"
+  },
+  {
+    "username": "lixu10",
+    "password": "123456",
+    "email": "2510224829@qq.com",
+    "developerStatus": "已批准",
+    "realName": "",
+    "phoneNumber": "",
+    "qqNumber": "",
+    "studentId": "",
+    "applicationReason": ""
+  },
+  {
+    "username": "a",
+    "password": "a",
+    "email": "a@163.com",
+    "developerStatus": "已批准",
+    "realName": "",
+    "phoneNumber": "",
+    "qqNumber": "",
+    "studentId": "",
+    "applicationReason": "",
+    "isBanned": true
+  },
+  {
+    "username": "111",
+    "password": "111",
+    "email": "11@1.11",
+    "developerStatus": "待审核",
+    "realName": "BUAA",
+    "phoneNumber": "BUAA",
+    "qqNumber": "BUAA",
+    "studentId": "BUAA",
+    "applicationReason": "BUAA"
+  },
+  {
+    "username": "qqq",
+    "password": "qqq",
+    "email": "2510224829@qq.com",
+    "developerStatus": "未申请",
+    "realName": "",
+    "phoneNumber": "",
+    "qqNumber": "",
+    "studentId": "",
+    "applicationReason": ""
+  },
+  {
+    "username": "1",
+    "password": "1",
+    "email": "11@1.11",
+    "developerStatus": "未申请",
+    "realName": "",
+    "phoneNumber": "",
+    "qqNumber": "",
+    "studentId": "",
+    "applicationReason": "",
+    "isBanned": true
+  },
+  {
+    "username": "冯伟",
+    "password": "123",
+    "email": "2510224829@qq.com",
+    "developerStatus": "已批准",
+    "realName": "冯伟",
+    "phoneNumber": "188",
+    "qqNumber": "2672894319",
+    "studentId": "教职工",
+    "applicationReason": "123",
+    "isBanned": true
+  },
+  {
+    "username": "h",
+    "password": "123456",
+    "email": "h@h",
+    "developerStatus": "未申请",
+    "realName": "",
+    "phoneNumber": "",
+    "qqNumber": "",
+    "studentId": "",
+    "applicationReason": ""
+  },
+  {
+    "username": "moxuan",
+    "password": "123456",
+    "email": "jbh2251284734@163.com",
+    "developerStatus": "已批准",
+    "realName": "姜博瀚",
+    "phoneNumber": "13804498690",
+    "qqNumber": "2251284734",
+    "studentId": "24373165",
+    "applicationReason": "看看后台"
+  },
+  {
+    "username": "Zgf",
+    "password": "123456",
+    "email": "2893660040@qq.com",
+    "developerStatus": "未申请",
+    "realName": "",
+    "phoneNumber": "",
+    "qqNumber": "",
+    "studentId": "",
+    "applicationReason": ""
+  }
+]

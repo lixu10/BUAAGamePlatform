@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="./1.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto&display=swap">
+</head>
+<body>
+
+        <!-- 游戏背景简介 -->
+        <div id="gameIntro">
+            <p>你是小明，2124年你以优异的高考成绩考入北京航空航天大学，大一学习成绩优异，成功分流进你最喜欢的计算器专业学习。6年后你硕士毕业，成功进入花公司工作，短短几年便年薪百万，你交了首付买了二环里的房子。可是意外发生了，公司经营状况不好，你被裁员了……你仅剩50000元，如何能偿还得了房贷呢？你看向了加密货币行业……</p>
+            <button id="startGameBtn">开始游戏</button>
+        </div>
+
+        <!-- 游戏界面 -->
+        <div id="gameInterface" style="display: none;">
+            <!-- 货币选择 -->
+            <div class="currency-selection">
+                <select id="currencySelect">
+                    <option value="tebibyte">特比币</option>
+                    <option value="catcoin">猫猫币</option>
+                    <option value="ethereum">以大坊</option>
+                    <option value="aircoin">飞机币</option>
+                </select>
+                <button id="viewDetailsBtn">查看详情</button>
+            </div>
+
+            <!-- 货币详情 -->
+            <div id="currencyDetails">
+                <h2 id="currencyName">特比币</h2>
+                <p>当前价格：<span id="currentPrice">10000.0000</span> BHY</p>
+                <p>涨跌幅：<span id="priceChange">0%</span></p>
+                <canvas id="priceChart"></canvas>
+                <p>持有数量：<span id="ownedAmount">0.0000</span></p>
+                <p>持有价值：<span id="ownedValue">0.0000</span> BHY</p>
+                <p>杠杆借款：<span id="borrowedAmount">0.0000</span> BHY</p>
+                <div class="trade-actions">
+                    <label for="tradeType">交易类型：</label>
+                    <select id="tradeType">
+                        <option value="bhy">按金额交易（BHY）</option>
+                        <option value="amount">按数量交易（虚拟货币数量）</option>
+                    </select>
+                    <input type="number" id="tradeAmount" placeholder="输入金额或数量">
+                    <select id="leverageSelect">
+                        <option value="1">无杠杆</option>
+                        <option value="2">2倍杠杆</option>
+                        <option value="5">5倍杠杆</option>
+                        <option value="10">10倍杠杆</option>
+                        <option value="20">20倍杠杆</option>
+                        <option value="50">50倍杠杆</option>
+                        <option value="100">100倍杠杆</option>
+                    </select>
+                    <button id="buyBtn">购买</button>
+                    <button id="sellBtn">卖出</button>
+                    <button id="buyAllBtn">全仓买入</button> 
+                    <button id="sellAllBtn">全仓卖出</button>
+                    <p>强制平仓价格：<span id="liquidationPrice">-</span></p>
+                </div>
+            </div>
+
+            <!-- 玩家状态 -->
+            <div class="game-status">
+                <h3>持有资产</h3>
+                <table id="assetTable">
+                    <tr>
+                        <th>虚拟货币</th>
+                        <th>持有数量</th>
+                        <th>当前价格（BHY）</th>
+                        <th>持有价值（BHY）</th>
+                    </tr>
+                    <!-- 资产列表将通过 JavaScript 动态生成 -->
+                </table>
+                <p>当前 BHY 数量：<span id="currentBHY">100000.0000</span></p>
+                <p>剩余贷款数量：<span id="remainingLoan">1000000.0000</span></p>
+                <p>当前日期：<span id="currentDate">2124年X月X日</span></p>
+            </div>
+
+            <!-- 进入下一天按钮 -->
+            <button id="nextDayBtn">进入下一天</button>
+        </div>
+
+        <!-- 游戏结束界面 -->
+        <div id="gameOver" style="display: none;">
+            <h2 id="gameResult">游戏结束</h2>
+            <button id="restartGameBtn">重新开始</button>
+        </div>
+    </div>
+
+    <script src="./game1.js"></script>
+</body>
+</html>

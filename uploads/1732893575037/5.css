@@ -1,0 +1,87 @@
+
+/* 页面主体样式 */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Microsoft YaHei", sans-serif;
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
+    color: #fff;
+}
+
+/* 游戏内容部分 */
+.game-content {
+    max-width: 1200px;
+    margin: 80px auto;
+    padding: 40px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+}
+
+.game-content h2 {
+    font-size: 48px;
+    text-align: center;
+    margin-bottom: 30px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+.game-content p {
+    font-size: 20px;
+    line-height: 1.8;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+
+.game-container p {
+    font-size: 28px;
+    color: #ddd;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+}
+
+.question-box {
+    margin-top: 20px;
+    padding: 10px;
+    font-size: 24px;
+}
+
+.results {
+    margin-top: 30px;
+    font-size: 18px;
+}
+
+.hidden {
+    display: none;
+}
+
+.button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.button:hover {
+    background-color: #45a049;
+}
+
+select {
+    padding: 10px;
+    margin-top: 20px;
+}
+
+input {
+    padding: 10px;
+    font-size: 18px;
+    width: 100px;
+}

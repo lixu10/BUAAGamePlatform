@@ -1,0 +1,233 @@
+/* 重置默认样式 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f0f2f5;
+    font-family: 'Roboto', 'Microsoft YaHei', sans-serif;
+    color: #333;
+}
+
+/* 容器样式 */
+.container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* 标题样式 */
+h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+    color: #1890ff;
+    font-weight: bold;
+    align-items: center;
+}
+
+/* 游戏简介样式 */
+#gameIntro {
+    margin-top: 20px;
+    align-items: center;
+}
+
+#gameIntro p {
+    text-align: center;
+    font-size: 18px;
+    line-height: 1.8;
+    color: #555;
+    text-align: left;
+    margin-bottom: 30px;
+}
+
+/* 按钮样式 */
+button {
+    align-items: center;
+    padding: 12px 30px;
+    font-size: 18px;
+    background-color: #1890ff;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #40a9ff;
+}
+
+.currency-selection,
+.trade-actions,
+.game-status {
+    margin: 20px 0;
+    text-align: left;
+}
+
+/* 货币详情样式 */
+#currencyDetails {
+    align-items: center;
+    text-align: center;
+    margin-top: 20px;
+    text-align: left;
+}
+
+#currencyDetails h2 {
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+#currencyDetails p {
+    text-align: center;
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #555;
+}
+
+/* 输入框和选择框样式 */
+input[type="number"],
+select {
+    padding: 10px;
+    font-size: 16px;
+    margin-right: 10px;
+    border: 1px solid #d9d9d9;
+    border-radius: 4px;
+    transition: border-color 0.3s ease;
+    align-items: center;
+}
+
+input[type="number"]:focus,
+select:focus {
+    border-color: #1890ff;
+    outline: none;
+}
+
+/* 交易操作按钮 */
+.trade-actions button {
+    margin-top: 10px;
+    align-items: center;
+}
+
+.trade-actions button:first-of-type {
+    margin-right: 10px;
+}
+
+.trade-actions p {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 16px;
+    color: #888;
+}
+
+/* 游戏状态样式 */
+.game-status p {
+    text-align: center;
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #333;
+    align-items: center;
+}
+
+.game-status h3 {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+#assetTable {
+    text-align: center;
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+#assetTable th,
+#assetTable td {
+    text-align: center;
+    border: 1px solid #d9d9d9;
+    padding: 8px;
+    text-align: center;
+}
+
+#assetTable th {
+    text-align: center;
+    background-color: #f5f5f5;
+}
+
+/* 游戏结束界面样式 */
+#gameOver h2 {
+    text-align: center;
+    font-size: 36px;
+    color: #e74c3c;
+    margin-bottom: 20px;
+    align-items: center;
+}
+
+#gameOver button {
+    background-color: #2ecc71;
+}
+
+#gameOver button:hover {
+    background-color: #27ae60;
+}
+
+/* 图表样式 */
+canvas {
+    max-width: 100%;
+    height: auto;
+    margin-top: 20px;
+    align-items: center;
+}
+
+/* 价格上涨时的样式（绿色） */
+.price-up {
+    color: #52c41a;
+    font-weight: bold;
+}
+
+/* 价格下跌时的样式（红色） */
+.price-down {
+    color: #f5222d;
+    font-weight: bold;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .container {
+        width: 90%;
+        margin: 20px auto;
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 36px;
+    }
+
+    #gameIntro p {
+        font-size: 16px;
+    }
+
+    input[type="number"],
+    select {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .trade-actions {
+        text-align: center;
+    }
+
+    .trade-actions button {
+        width: 48%;
+        margin: 5px 1%;
+    }
+}

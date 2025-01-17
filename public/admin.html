@@ -1,0 +1,213 @@
+<!-- public/admin.html -->
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>后台管理 - BUAA游戏网</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 其他元数据 -->
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+    <!-- 头部导航栏 -->
+    <header>
+        <nav class="navbar">
+            <a href="../index.html"><div class="logo">BUAA小游戏</div></a>
+            <ul class="nav-links">
+                <li><a href="/">首页</a></li>
+                <li><a href="/games.html">游戏列表</a></li>
+                <li><a href="/upload.html">上传游戏</a></li>
+                <li><a href="/creator.html">开发者计划</a></li>
+            </ul>
+            <div class="auth-buttons">
+                <button id="logoutBtn">登出</button>
+            </div>
+            <!-- 汉堡菜单 -->
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+        <!-- 侧边栏 -->
+        <div class="sidebar">
+            <ul>
+                <li><a href="/">首页</a></li>
+                <li><a href="/games.html">游戏列表</a></li>
+                <li><a href="/upload.html">上传游戏</a></li>
+                <li><a href="/creator.html">开发者</a></li>
+            </ul>
+            <div class="auth-buttons-sidebar">
+                <button id="logoutBtnSidebar">登出</button>
+            </div>
+        </div>
+        <div class="overlay"></div>
+    </header>
+
+    <section class="admin-section" id="adminSection">
+        <h2>后台管理</h2>
+        <h3>游戏管理</h3>
+        <table class="admin-table" id="gameTable">
+            <thead>
+                <tr>
+                    <th>游戏ID</th>
+                    <th>名称</th>
+                    <th>作者</th>
+                    <th>状态</th>
+                    <th>操作</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- 游戏数据由脚本填充 -->
+            </tbody>
+        </table>
+
+        <h3>用户管理</h3>
+        <table class="admin-table" id="userTable">
+            <thead>
+                <tr>
+                    <th>用户名</th>
+                    <th>邮箱</th>
+                    <th>开发者状态</th>
+                    <th>操作</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- 用户数据由脚本填充 -->
+            </tbody>
+        </table>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 BUAA. 版权所有.</p>
+    </footer>
+
+    <script src="js/scripts.js"></script>
+    <script>
+        // 后台管理脚本
+        document.addEventListener('DOMContentLoaded', () => {
+            fetch('/all_games')
+                .then(response => response.json())
+                .then(games => {
+                    const gameTableBody = document.querySelector('#gameTable tbody');
+                    games.forEach(game => {
+                        const tr = document.createElement('tr');
+                        tr.innerHTML = `
+                            <td>${game.id}</td>
+                            <td>${game.name}</td>
+                            <td>${game.creator}</td>
+                            <td>${game.status}</td>
+                            <td class="admin-buttons">
+                                <button class="approve-button" data-gameid="${game.id}">批准</button>
+                                <button class="reject-button" data-gameid="${game.id}">驳回/下架</button>
+                            </td>
+                        `;
+                        gameTableBody.appendChild(tr);
+                    });
+
+                    document.querySelectorAll('.approve-button').forEach(button => {
+                        button.addEventListener('click', (e) => {
+                            const gameId = e.target.getAttribute('data-gameid');
+                            fetch('/approve_game', {
+                                method: 'POST',
+                                headers: { 'Content-Type': 'application/json' },
+                                body: JSON.stringify({ gameId })
+                            })
+                            .then(response => response.text())
+                            .then(data => {
+                                alert(data);
+                                location.reload();
+                            });
+                        });
+                    });
+
+                    document.querySelectorAll('.reject-button').forEach(button => {
+                        button.addEventListener('click', (e) => {
+                            const gameId = e.target.getAttribute('data-gameid');
+                            fetch('/reject_game', {
+                                method: 'POST',
+                                headers: { 'Content-Type': 'application/json' },
+                                body: JSON.stringify({ gameId })
+                            })
+                            .then(response => response.text())
+                            .then(data => {
+                                alert(data);
+                                location.reload();
+                            });
+                        });
+                    });
+                });
+
+            fetch('/all_users')
+                .then(response => response.json())
+                .then(users => {
+                    const userTableBody = document.querySelector('#userTable tbody');
+                    users.forEach(user => {
+                        const tr = document.createElement('tr');
+                        tr.innerHTML = `
+                            <td>${user.username}</td>
+                            <td>${user.email}</td>
+                            <td>${user.developerStatus}</td>
+                            <td class="admin-buttons">
+                                <button class="approve-dev-button" data-username="${user.username}">批准开发者</button>
+                                <button class="ban-user-button" data-username="${user.username}">封禁用户</button>
+                            </td>
+                        `;
+                        userTableBody.appendChild(tr);
+                    });
+
+                    document.querySelectorAll('.approve-dev-button').forEach(button => {
+                        button.addEventListener('click', (e) => {
+                            const username = e.target.getAttribute('data-username');
+                            fetch('/approve_developer', {
+                                method: 'POST',
+                                headers: { 'Content-Type': 'application/json' },
+                                body: JSON.stringify({ username })
+                            })
+                            .then(response => response.text())
+                            .then(data => {
+                                alert(data);
+                                location.reload();
+                            });
+                        });
+                    });
+
+                    document.querySelectorAll('.ban-user-button').forEach(button => {
+                        button.addEventListener('click', (e) => {
+                            const username = e.target.getAttribute('data-username');
+                            fetch('/ban_user', {
+                                method: 'POST',
+                                headers: { 'Content-Type': 'application/json' },
+                                body: JSON.stringify({ username })
+                            })
+                            .then(response => response.text())
+                            .then(data => {
+                                alert(data);
+                                location.reload();
+                            });
+                        });
+                    });
+                });
+
+            // 登出功能
+            document.getElementById('logoutBtn').addEventListener('click', () => {
+                fetch('/admin_logout')
+                    .then(response => response.text())
+                    .then(data => {
+                        alert(data);
+                        location.href = '/admin';
+                    });
+            });
+            document.getElementById('logoutBtnSidebar').addEventListener('click', () => {
+                fetch('/admin_logout')
+                    .then(response => response.text())
+                    .then(data => {
+                        alert(data);
+                        location.href = '/admin';
+                    });
+            });
+        });
+    </script>
+</body>
+</html>

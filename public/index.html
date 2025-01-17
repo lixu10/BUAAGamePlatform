@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>BUAA游戏网</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+   <!-- 头部导航栏 -->
+    <header>
+        <nav class="navbar">
+            <a href="../index.html"><div class="logo">BUAA小游戏</div></a>
+            <ul class="nav-links">
+                <li><a href="/">首页</a></li>
+                <li><a href="/games.html">游戏列表</a></li>
+                <li><a href="/upload.html">上传游戏</a></li>
+                <li><a href="/creator.html">开发者计划</a></li>
+            </ul>
+            <div class="auth-buttons">
+                <button id="logoutBtn">登出</button>
+            </div>
+            <!-- 汉堡菜单 -->
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+        <!-- 侧边栏 -->
+        <div class="sidebar">
+            <ul>
+                <li><a href="/">首页</a></li>
+                <li><a href="/games.html">游戏列表</a></li>
+                <li><a href="/upload.html">上传游戏</a></li>
+                <li><a href="/creator.html">开发者</a></li>
+            </ul>
+            <div class="auth-buttons-sidebar">
+                <button id="logoutBtnSidebar">登出</button>
+            </div>
+        </div>
+        <div class="overlay"></div>
+    </header>
+
+
+    <!--<section class="carousel">-->
+    <!--    <div class="carousel-item active" style="background-image: url('images/banner1.png');"></div>-->
+    <!--    <div class="carousel-item" style="background-image: url('images/banner2.png');"></div>-->
+    <!--    <div class="carousel-item" style="background-image: url('images/banner3.png');"></div>-->
+    <!--    <div class="carousel-item" style="background-image: url('images/banner4.png');"></div>-->
+    <!--    <div class="carousel-item" style="background-image: url('images/banner5.png');"></div>-->
+    <!--    <div class="carousel-item" style="background-image: url('images/banner6.png');"></div>-->
+    <!--    <div class="carousel-item" style="background-image: url('images/banner7.png');"></div>-->
+    <!--</section>-->
+
+    <section class="introduction">
+        <h2>欢迎来到BUAA游戏乐园</h2>
+        <p>这里汇集了最新最有趣的上课摸鱼小游戏，快来体验吧！</p>
+    </section>
+    
+    <section class="leaderboard">
+        <h2>排行榜</h2>
+        <div id="leaderboardContainer" class="leaderboard-container">
+            <!-- 排行榜内容由脚本生成 -->
+        </div>
+    </section>
+
+    <!--<section class="games">-->
+    <!--    <h2>游戏推荐</h2>-->
+    <!--    <div class="game-item">-->
+    <!--        <img src="images/1.png" alt="游戏1">-->
+    <!--        <div class="game-info">-->
+    <!--            <h3>游戏一：金融大亨</h3>-->
+    <!--            <p>你将化身一个下岗的BUAAer，拿着仅剩的资金准备在币圈翻身，你会成功还清贷款吗？</p>-->
+    <!--            <a href="game1.html" class="play-button">进入游戏</a>-->
+    <!--        </div>-->
+    <!--    </div>-->
+    <!--    <div class="game-item">-->
+    <!--        <img src="images/2.png" alt="游戏2">-->
+    <!--        <div class="game-info">-->
+    <!--            <h3>游戏二：吃豆人</h3>-->
+    <!--            <p>你将化身为经典街机游戏中的主角——吃豆人！在迷宫般的地图中，你需要巧妙地躲避幽灵的追击，同时尽可能多地收集分散在路径上的能量豆。通过智慧和操作，完成挑战，体验紧张刺激的冒险！</p>-->
+    <!--            <a href="game2.html" class="play-button">进入游戏</a>-->
+    <!--        </div>-->
+    <!--    </div>-->
+    <!--    <div class="game-item">-->
+    <!--        <img src="images/3.png" alt="游戏3">-->
+    <!--        <div class="game-info">-->
+    <!--            <h3>游戏三：打砖块</h3>-->
+    <!--            <p>你将会利用小球逐一击破砖块，注意不要让小球掉落下来哦！</p>-->
+    <!--            <a href="game3.html" class="play-button">进入游戏</a>-->
+    <!--        </div>-->
+    <!--    </div>-->
+    <!--    <div class="game-item">-->
+    <!--        <img src="images/4.png" alt="游戏4">-->
+    <!--        <div class="game-info">-->
+    <!--            <h3>游戏四：FPS训练</h3>-->
+    <!--            <p>你将成为一个准确无误的BUAAer，成为万里挑一的神射手!</p>-->
+    <!--            <a href="game4.html" class="play-button">进入游戏</a>-->
+    <!--        </div>-->
+    <!--    </div>-->
+    <!--    <div class="game-item">-->
+    <!--        <img src="images/5.png" alt="游戏5">-->
+    <!--        <div class="game-info">-->
+    <!--            <h3>游戏五：大猿口算</h3>-->
+    <!--            <p>大学牲再也不用为卷不过小学生而苦恼了，因为他们也有自己的口算！</p>-->
+    <!--            <a href="game5.html" class="play-button">进入游戏</a>-->
+    <!--        </div>-->
+    <!--    </div>-->
+    <!--    <div class="game-item">-->
+    <!--        <img src="images/6.png" alt="游戏6">-->
+    <!--        <div class="game-info">-->
+    <!--            <h3>游戏六：寻宝藏</h3>-->
+    <!--            <p>传言在神秘的BUAA里藏着不为人知的珍贵宝藏，快来探索吧</p>-->
+    <!--            <a href="game6.html" class="play-button">进入游戏</a>-->
+    <!--        </div>-->
+    <!--    </div>-->
+    <!--</section>-->
+    
+    <!-- 开发者计划模块 -->
+    <section class="developer-plan">
+      <div class="content">
+        <h1>加入我们的开发者计划</h1>
+        <p>与我们一起创造未来的游戏体验，与上万玩家共享。</p>
+        <a href="/creator.html" class="btn">了解更多</a>
+      </div>
+    </section>
+    
+    <!-- 用户注册登录模块 -->
+    <section class="user-auth">
+      <div class="auth-card">
+        <h2>新用户注册</h2>
+        <p>创建账户，开启全新旅程。</p>
+        <a href="/register.html" class="btn">注册</a>
+      </div>
+      <div class="auth-card">
+        <h2>用户登录</h2>
+        <p>欢迎回来，继续探索。</p>
+        <a href="/login.html" class="btn">登录</a>
+      </div>
+    </section>
+    
+
+    
+    <section class="feedback">
+        <h2>使用场景</h2>
+        <div class="feedback-display">
+            <div class="feedback-item">
+                <p>你坐在数学分析课堂上，教授正激情满满地推导复杂公式，而你却早已跟不上节奏。“公式太抽象了，脑子快烧坏了！”这时候，打开 BUAA游戏网玩几款轻松的小游戏，不仅能放松心情，还能让你在课间调整状态，再次挑战数学难题。</p>
+                <span>- 数分摸鱼神器</span>
+            </div>
+            <div class="feedback-item">
+                <p>上机课你竭尽全力，但是也只完成了 3 道题目。“太困了，集中不了注意力！”打开 BUAA游戏网，用五分钟体验一局快速的小游戏，为大脑充电。重新投入学习时，效率倍增！</p>
+                <span>- 程设破防陪伴</span>
+            </div>
+            <div class="feedback-item">
+                <p>食堂的饭点高峰期，一堆北航附小、附中的小朋友占满了食堂。你拿着餐盘站在长龙中，耳边只有机器的哔哔声和人群的喧哗。“等得好无聊啊！”此时，掏出手机打开 BUAA 游戏网，随便来一局经典塔防游戏，时间一晃而过，还能提升反应速度！</p>
+                <span>- 食堂排队利器</span>
+            </div>
+            <div class="feedback-item">
+                <p>你期末还有 16 次 TD 没打卡，跑 TD 的时候不小心摔下来了，感觉骨折了。“哎，大运村那边共享单车把路挡住了，一时半会救护车也来不了！”不如玩会 BUAA 游戏网，短暂忘记疼痛。</p>
+                <span>- 缓解疼痛良药</span>
+            </div>
+            <div class="feedback-item">
+                <p>期中考程设用共享文档被发现了，你叫来了清华男友，要和辅导员一决高下。万一真打起来北航可就不是大学了！”我拿出了BUAA游戏网，给男友和辅导员PK，在游戏里一决高下就够了。</p>
+                <span>- 防止开除工具</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="feedback">
+        <h2>玩家评价</h2>
+        <div class="feedback-display">
+            <div class="feedback-item">
+                <p>"这些游戏太有趣了，数分课再也不无聊！"</p>
+                <span>- 王云鹏</span>
+            </div>
+            <div class="feedback-item">
+                <p>"界面美观，游戏流畅，强烈推荐！"</p>
+                <span>- 赵长禄</span>
+            </div>
+            <div class="feedback-item">
+                <p>"这里是我摸鱼的最佳选择。"</p>
+                <span>- 张广</span>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 BUAA. 版权所有.</p>
+    </footer>
+
+    <script src="js/scripts.js"></script>
+</body>
+</html>

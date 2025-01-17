@@ -1,0 +1,202 @@
+[
+  {
+    "id": "1732861003463",
+    "name": "吃豆人",
+    "creator": "管理员",
+    "category": "动作",
+    "imageLink": "http://games.buaa.me/images/2.png",
+    "instructionLink": "http://games.buaa.me/images/2.png",
+    "donationLink": "http://games.buaa.me/images/2.png",
+    "status": "已上架",
+    "ratings": [
+      5,
+      3,
+      5,
+      5,
+      3
+    ],
+    "ratedUsers": [
+      "lixu10",
+      "root",
+      "ykw",
+      "神坑之逗",
+      "111"
+    ],
+    "timestamp": 1732861003480
+  },
+  {
+    "id": "1732866045127",
+    "name": "test",
+    "creator": "管理员",
+    "category": "动作",
+    "imageLink": "https://2bpic.oss-cn-beijing.aliyuncs.com/2024/09/07/66dbe7609f66a.jpg",
+    "instructionLink": "",
+    "donationLink": "",
+    "status": "已下架",
+    "ratings": [
+      1
+    ],
+    "ratedUsers": [
+      "管理员"
+    ],
+    "timestamp": 1732866045142
+  },
+  {
+    "id": "1732867053290",
+    "name": "BUAA金融大亨",
+    "creator": "管理员",
+    "category": "经营",
+    "imageLink": "http://games.buaa.me/images/1.png",
+    "instructionLink": "",
+    "donationLink": "",
+    "status": "已上架",
+    "ratings": [
+      5,
+      4,
+      5,
+      5,
+      4,
+      5
+    ],
+    "ratedUsers": [
+      "lixu10",
+      "root",
+      "神坑之逗",
+      "ykw",
+      "a",
+      "111"
+    ],
+    "timestamp": 1732867053319
+  },
+  {
+    "id": "1732867480285",
+    "name": "星系争夺战",
+    "creator": "神坑之逗",
+    "category": "策略",
+    "imageLink": "https://skzd.me/MyPictures/icon1.png",
+    "instructionLink": "https://skzd.me",
+    "donationLink": "https://skzd.me/MyPictures/giveMeMoney.png",
+    "status": "已上架",
+    "ratings": [
+      5,
+      5,
+      5,
+      4,
+      5,
+      5,
+      1
+    ],
+    "ratedUsers": [
+      "lixu10",
+      "root",
+      "神坑之逗",
+      "管理员",
+      "ykw",
+      "a",
+      "111"
+    ],
+    "timestamp": 1732867480317
+  },
+  {
+    "id": "1732885504244",
+    "name": "1",
+    "creator": "lixu10",
+    "category": "经营",
+    "imageLink": "1",
+    "instructionLink": "",
+    "donationLink": "1",
+    "status": "待审核",
+    "ratings": [],
+    "ratedUsers": [],
+    "timestamp": 1732885511031
+  },
+  {
+    "id": "1732893005077",
+    "name": "打砖块",
+    "creator": "管理员",
+    "category": "动作",
+    "imageLink": "http://games.buaa.me/images/3.png",
+    "instructionLink": "",
+    "donationLink": "",
+    "status": "已上架",
+    "ratings": [
+      5
+    ],
+    "ratedUsers": [
+      "管理员"
+    ],
+    "timestamp": 1732893006256
+  },
+  {
+    "id": "1732893484639",
+    "name": "FPS训练",
+    "creator": "管理员",
+    "category": "动作",
+    "imageLink": "http://games.buaa.me/images/4.png",
+    "instructionLink": "",
+    "donationLink": "",
+    "status": "已上架",
+    "ratings": [
+      5
+    ],
+    "ratedUsers": [
+      "管理员"
+    ],
+    "timestamp": 1732893484944
+  },
+  {
+    "id": "1732893575037",
+    "name": "大猿口算",
+    "creator": "管理员",
+    "category": "休闲",
+    "imageLink": "http://games.buaa.me/images/5.png",
+    "instructionLink": "http://kousuan.buaa.me",
+    "donationLink": "",
+    "status": "已上架",
+    "ratings": [
+      5
+    ],
+    "ratedUsers": [
+      "管理员"
+    ],
+    "timestamp": 1732893575056
+  },
+  {
+    "id": "1732893783753",
+    "name": "北航寻宝藏",
+    "creator": "管理员",
+    "category": "策略",
+    "imageLink": "http://games.buaa.me/images/6.png",
+    "instructionLink": "",
+    "donationLink": "",
+    "status": "已上架",
+    "ratings": [
+      5,
+      5
+    ],
+    "ratedUsers": [
+      "管理员",
+      "1"
+    ],
+    "timestamp": 1732893784085
+  },
+  {
+    "id": "1732903398458",
+    "name": "工科数学分析",
+    "creator": "冯伟",
+    "category": "其他",
+    "imageLink": "https://2bpic.oss-cn-beijing.aliyuncs.com/2024/11/30/674a018674609.jpg",
+    "instructionLink": "",
+    "donationLink": "",
+    "status": "已上架",
+    "ratings": [
+      1,
+      1
+    ],
+    "ratedUsers": [
+      "冯伟",
+      "ykw"
+    ],
+    "timestamp": 1732903399355
+  }
+]

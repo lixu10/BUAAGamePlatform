@@ -1,0 +1,175 @@
+/* 页面主体样式 */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Microsoft YaHei", sans-serif;
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
+    color: #fff;
+}
+
+/* 游戏内容部分 */
+.game-content {
+    max-width: 800px;
+    margin: 80px auto;
+    padding: 40px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.game-content h2 {
+    font-size: 48px;
+    text-align: center;
+    margin-bottom: 30px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+.game-content p {
+    font-size: 20px;
+    line-height: 1.8;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.game-container {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+#map {
+    display: grid;
+    gap: 2px;
+    margin: 20px auto;
+    justify-content: center;
+}
+
+.cell {
+    width: 30px;
+    height: 30px;
+    background-color: #666;
+    border: 1px solid #999;
+    position: relative;
+}
+
+.cell.player {
+    border: 2px solid gold;
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.controls button {
+    margin: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.status {
+    margin-top: 20px;
+    font-size: 18px;
+}
+
+.difficulty {
+    margin-bottom: 20px;
+}
+
+.legend {
+    margin-top: 30px;
+    text-align: left;
+}
+
+.legend h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.legend ul {
+    list-style: none;
+    padding: 0;
+}
+
+.legend li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+    font-size: 16px;
+}
+
+.legend-color {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}
+
+.legend-color.undiscovered {
+    background-color: white;
+}
+
+.legend-color.empty {
+    background-color: darkgray;
+}
+
+.legend-color.treasure {
+    background-color: gold;
+}
+
+.legend-color.start {
+    background-color: green;
+}
+
+.legend-color.tsinghua-boyfriend {
+    background-color: purple;
+}
+
+.legend-color.electric-bike {
+    background-color: red;
+}
+
+.legend-color.wumei-supermarket {
+    background-color: yellow;
+}
+
+.legend-color.coffee-shop {
+    background-color: brown;
+}
+
+.legend-color.school-hospital {
+    background-color: pink;
+}
+
+.legend-color.treasure-map {
+    background-color: lightgreen;
+}
+
+.legend-color.airplane-key {
+    background-color: blue;
+}
+
+.legend-color.chemical-lab {
+    background-color: cyan;
+}
+
+.legend-color.td-line {
+    background-color: orange;
+}
+
+.legend-color.family-area {
+    background-color: magenta;
+}
+
+.legend-color.programming-lab {
+    background-color: darkred;
+}
+
+.legend-color.meet-ddl {
+    background-color: black;
+}
+

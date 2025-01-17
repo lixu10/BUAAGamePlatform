@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>开发者管理 - BUAA游戏网</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/creator.css">
+    <link rel="stylesheet" href="css/form.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <a href="/"><div class="logo">BUAA小游戏</div></a>
+            <ul class="nav-links">
+                <li><a href="/">首页</a></li>
+                <li><a href="/games.html">游戏列表</a></li>
+                <li><a href="/upload.html">上传游戏</a></li>
+                <li><a href="/creator.html">开发者计划</a></li>
+            </ul>
+            <div class="auth-buttons">
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+        <div class="sidebar">
+            <ul>
+                <li><a href="/">首页</a></li>
+                <li><a href="/games.html">游戏列表</a></li>
+                <li><a href="/upload.html">上传游戏</a></li>
+                <li><a href="/creator.html">开发者</a></li>
+            </ul>
+            <div class="auth-buttons-sidebar">
+            </div>
+        </div>
+        <div class="overlay"></div>
+    </header>
+
+    <section class="developer-section">
+        <div class="developer-info">
+            <h2>开发者信息</h2>
+            <div class="info-container">
+            </div>
+        </div>
+        <div class="developer-content">
+            <div id="developerContent">
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+        <p>&copy; 2024 BUAA. 版权所有.</p>
+    </footer>
+
+    <script src="js/scripts.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            fetch('/check_login')
+                .then(response => response.json())
+                .then(data => {
+                    if (!data.loggedIn) {
+                        alert('请先登录');
+                        location.href = '/login.html';
+                    } else {
+                        fetch('/developer_info')
+                            .then(response => response.json())
+                            .then(info => {
+                                const infoContainer = document.querySelector('.info-container');
+                                let infoHtml = `
+                                    <p>用户名：${info.username}</p>
+                                    <p>邮箱：${info.email}</p>
+                                    <p>开发者状态：${info.developerStatus}</p>
+                                `;
+                                if (info.developerStatus === '已批准') {
+                                    infoHtml += `
+                                        <p>真实姓名：${info.realName}</p>
+                                        <p>手机号：${info.phoneNumber}</p>
+                                        <p>QQ号：${info.qqNumber}</p>
+                                        <p>北航学号：${info.studentId}</p>
+                                    `;
+                                }
+                                infoContainer.innerHTML = infoHtml;
+                                const developerContent = document.getElementById('developerContent');
+                                if (info.developerStatus === '未申请') {
+                                    developerContent.innerHTML = `
+                                        <h2>申请成为开发者</h2>
+                                        <form id="developerForm">
+                                            <label>真实姓名：</label>
+                                            <input type="text" name="realName" required>
+                                            <label>手机号：</label>
+                                            <input type="text" name="phoneNumber" required>
+                                            <label>QQ号：</label>
+                                            <input type="text" name="qqNumber" required>
+                                            <label>北航学号：</label>
+                                            <input type="text" name="studentId" required>
+                                            <label>申请理由：</label>
+                                            <textarea name="applicationReason" required></textarea>
+                                            <button type="submit">提交申请</button>
+                                        </form>
+                                    `;
+                                    const developerForm = document.getElementById('developerForm');
+                                    developerForm.addEventListener('submit', (e) => {
+                                        e.preventDefault();
+                                        const formData = new FormData(developerForm);
+                                        fetch('/apply_developer', {
+                                            method: 'POST',
+                                            body: new URLSearchParams(formData)
+                                        })
+                                        .then(response => response.text())
+                                        .then(data => {
+                                            alert(data);
+                                            location.reload();
+                                        });
+                                    });
+                                } else if (info.developerStatus === '待审核') {
+                                    developerContent.innerHTML = '<p>您的开发者申请正在审核中，请耐心等待。</p>';
+                                } else if (info.developerStatus === '已批准') {
+                                    fetch('/developer_games')
+                                        .then(response => response.json())
+                                        .then(games => {
+                                            let tableHtml = `
+                                                <h2>我的游戏</h2>
+                                                <table class="games-table">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>游戏名称</th>
+                                                            <th>ID</th>
+                                                            <th>状态</th>
+                                                            <th>评分</th>
+                                                            <th>评分人数</th>
+                                                            <th>排名</th>
+                                                            <th>图片链接</th>
+                                                            <th>说明链接</th>
+                                                            <th>分类</th>
+                                                            <th>捐款图片</th>
+                                                            <th>操作</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                            `;
+                                            games.forEach(game => {
+                                                tableHtml += `
+                                                    <tr>
+                                                        <td>${game.name}</td>
+                                                        <td>${game.id}</td>
+                                                        <td>${game.status}</td>
+                                                        <td>${game.averageRating}</td>
+                                                        <td>${game.ratingCount}</td>
+                                                        <td>${game.ranking}</td>
+                                                        <td>${game.imageLink}</td>
+                                                        <td>${game.instructionLink || '无'}</td>
+                                                        <td>${game.category}</td>
+                                                        <td>${game.donationLink || '无'}</td>
+                                                        <td>
+                                                            <button class="modify-button" data-gameid="${game.id}">修改</button>
+                                                            <button class="reupload-button" data-gameid="${game.id}">重新上传</button>
+                                                        </td>
+                                                    </tr>
+                                                `;
+                                            });
+                                            tableHtml += `
+                                                    </tbody>
+                                                </table>
+                                            `;
+                                            developerContent.innerHTML = tableHtml;
+                                            document.querySelectorAll('.modify-button').forEach(button => {
+                                                button.addEventListener('click', (e) => {
+                                                    const gameId = e.target.getAttribute('data-gameid');
+                                                    const game = games.find(g => g.id === gameId);
+                                                    developerContent.innerHTML = `
+                                                        <h2>修改游戏信息</h2>
+                                                        <form id="modifyForm">
+                                                            <input type="hidden" name="gameId" value="${game.id}">
+                                                            <label>游戏图片链接：</label>
+                                                            <input type="text" name="imageLink" value="${game.imageLink}" required>
+                                                            <label>游戏说明链接（可为空）：</label>
+                                                            <input type="text" name="instructionLink" value="${game.instructionLink}">
+                                                            <label>游戏分类：</label>
+                                                            <input type="text" name="category" value="${game.category}" required>
+                                                            <label>捐款图片链接：</label>
+                                                            <input type="text" name="donationLink" value="${game.donationLink}">
+                                                            <button type="submit">提交修改</button>
+                                                        </form>
+                                                    `;
+                                                    const modifyForm = document.getElementById('modifyForm');
+                                                    modifyForm.addEventListener('submit', (e) => {
+                                                        e.preventDefault();
+                                                        const formData = new FormData(modifyForm);
+                                                        fetch('/modify_game', {
+                                                            method: 'POST',
+                                                            body: new URLSearchParams(formData)
+                                                        })
+                                                        .then(response => response.json())
+                                                        .then(data => {
+                                                            if (data.error) {
+                                                                alert(data.error);
+                                                            } else {
+                                                                alert(data.message);
+                                                                location.reload();
+                                                            }
+                                                        });
+                                                    });
+                                                });
+                                            });
+
+                                            document.querySelectorAll('.reupload-button').forEach(button => {
+                                                button.addEventListener('click', (e) => {
+                                                    const gameId = e.target.getAttribute('data-gameid');
+                                                    developerContent.innerHTML = `
+                                                        <h2>重新上传游戏</h2>
+                                                        <form id="reuploadForm" enctype="multipart/form-data">
+                                                            <input type="hidden" name="gameId" value="${gameId}">
+                                                            <label>游戏文件（ZIP格式）：</label>
+                                                            <input type="file" name="gameFile" accept=".zip" required>
+                                                            <button type="submit">提交重新上传</button>
+                                                        </form>
+                                                    `;
+                                                    const reuploadForm = document.getElementById('reuploadForm');
+                                                    reuploadForm.addEventListener('submit', (e) => {
+                                                        e.preventDefault();
+                                                        const formData = new FormData(reuploadForm);
+                                                        fetch('/reupload_game', {
+                                                            method: 'POST',
+                                                            body: formData
+                                                        })
+                                                        .then(response => response.json())
+                                                        .then(data => {
+                                                            if (data.error) {
+                                                                alert(data.error);
+                                                            } else {
+                                                                alert(data.message);
+                                                                location.reload();
+                                                            }
+                                                        });
+                                                    });
+                                                });
+                                            });
+                                        });
+                                }
+                            });
+                    }
+                });
+        });
+    </script>
+</body>
+</html>

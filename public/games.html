@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>游戏列表 - BUAA游戏网</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/games.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <a href="../index.html"><div class="logo">BUAA小游戏</div></a>
+            <ul class="nav-links">
+                <li><a href="/">首页</a></li>
+                <li><a href="/games.html">游戏列表</a></li>
+                <li><a href="/upload.html">上传游戏</a></li>
+                <li><a href="/creator.html">开发者计划</a></li>
+            </ul>
+            <div class="auth-buttons">
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+        <div class="sidebar">
+            <ul>
+                <li><a href="/">首页</a></li>
+                <li><a href="/games.html">游戏列表</a></li>
+                <li><a href="/upload.html">上传游戏</a></li>
+                <li><a href="/creator.html">开发者</a></li>
+            </ul>
+            <div class="auth-buttons-sidebar">
+            </div>
+        </div>
+        <div class="overlay"></div>
+    </header>
+
+    <section class="games">
+        <h2>游戏列表</h2>
+        <div class="category-filter">
+            <label>选择分类：</label>
+            <select id="categorySelect">
+                <option value="全部">全部</option>
+                <option value="策略">策略</option>
+                <option value="经营">经营</option>
+                <option value="动作">动作</option>
+                <option value="休闲">休闲</option>
+                <option value="体育">体育</option>
+                <option value="多人">多人</option>
+                <option value="其他">其他</option>
+            </select>
+        </div>
+        <div id="gameList">
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 BUAA. 版权所有.</p>
+    </footer>
+
+    <script src="js/scripts.js"></script>
+</body>
+</html>

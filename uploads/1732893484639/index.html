@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>FPS训练 | BUAA游戏网</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 引入Font Awesome图标库 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="./4.css">
+</head>
+<body>
+            <div id="interval-control">
+            <label for="interval-range">设置你想要练习的难度:</label>
+            <input type="range" id="interval-range" min="100" max="2000" value="500">
+            <span id="interval-value">500 ms</span>
+            </div>
+            <div id="game-container">
+                <div id="red-dot" style="display: none;"></div>
+                <div id="score">Score: 0</div>
+                <button id="start-btn">开始训练</button>
+            </div>
+        
+    <script src="./game4.js"></script>
+</body>
+</html>

@@ -1,0 +1,230 @@
+/* 游戏列表样式 */
+.games {
+    padding: 40px;
+}
+
+.games h2 {
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+/* 分类选择样式 */
+.category-filter {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.category-filter label {
+    margin-right: 10px;
+}
+
+.category-filter select {
+    padding: 8px 12px;
+    font-size: 16px;
+}
+
+.game-item {
+    display: flex;
+    margin-bottom: 30px;
+}
+
+.game-item img {
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+    margin-right: 20px;
+}
+
+.game-info {
+    flex: 1;
+}
+
+.game-info h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.game-info p {
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+.play-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #1890ff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+}
+
+.play-button:hover {
+    background-color: #40a9ff;
+}
+
+/* instruction-button 样式 */
+.game-meta .instruction-button {
+    padding: 10px 20px;
+    background-color: #ffa940;
+    color: #fff;
+    text-decoration: none;
+    border: none;
+    border-radius: 4px;
+    margin-right: 10px;
+}
+
+.game-meta .instruction-button:hover {
+    background-color: #ffc069;
+}
+
+
+/* 游戏详情页样式 */
+.game-detail {
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh - 60px); /* 减去导航栏高度 */
+}
+
+.game-detail h2 {
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.game-detail iframe {
+    width: 100%;
+    border: none;
+    flex-grow: 1;
+}
+
+/* 全屏按钮样式 */
+.fullscreen-button {
+    position: fixed;
+    top: 80px;
+    right: 20px;
+    z-index: 1000;
+    padding: 10px 20px;
+    background-color: #1890ff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.fullscreen-button:hover {
+    background-color: #40a9ff;
+}
+
+.game-detail .game-meta {
+    text-align: center;
+    margin-top: 20px 0;
+}
+
+.game-detail .donate-button {
+    padding: 10px 20px;
+    background-color: #ff7a45;
+    color: #fff;
+    text-decoration: none;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.game-detail .donate-button:hover {
+    background-color: #ff9c6e;
+}
+
+.game-detail h3 {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.game-detail form {
+    width: 400px;
+    margin: 20px auto;
+}
+
+.game-detail form label {
+    display: block;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+.game-detail form input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #d9d9d9;
+    border-radius: 4px;
+}
+
+.game-detail form button {
+    width: 100%;
+    padding: 12px;
+    background-color: #1890ff;
+    border: none;
+    color: #fff;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.game-detail form button:hover {
+    background-color: #40a9ff;
+}
+
+@media (max-width: 768px) {
+    .game-detail {
+        height: auto;
+    }
+}
+
+/* 捐赠弹窗样式 */
+.donation-modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.5);
+}
+
+.donation-modal-content {
+    background-color: #fefefe;
+    margin: 10% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 300px;
+    text-align: center;
+    position: relative;
+}
+
+.donation-modal-content img {
+    width: 100%;
+    height: auto;
+}
+
+.donation-modal-content .close-button {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #aaa;
+    cursor: pointer;
+}
+
+.donation-modal-content .close-button:hover,
+.donation-modal-content .close-button:focus {
+    color: #000;
+}
+
+@media (max-width: 768px) {
+    .game-detail iframe {
+        height: 60vh; /* 在小屏幕上高度设为视口高度的 60% */
+    }
+}

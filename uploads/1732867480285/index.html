@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>星系争夺战Alpha</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="settings">
+        <h2>选择难度和地图大小</h2>
+        <div class="difficulty">
+            <label for="difficulty">难度：</label>
+            <select id="difficulty">
+                <option value="easy">简单</option>
+                <option value="medium">中等</option>
+                <option value="hard">困难</option>
+            </select>
+        </div>
+        <div class="map-size">
+            <label for="mapSize">地图大小：</label>
+            <select id="mapSize">
+                <option value="small">小 (3x3)</option>
+                <option value="medium">中 (4x4)</option>
+                <option value="large">大 (5x5)</option>
+            </select>
+        </div>
+        <button onclick="startGame()">开始游戏</button>
+    </div>
+    <svg width="960" height="600"></svg>
+    <div class="game-info">
+        <button id="endTurnButton" onclick="endPlayerTurn()" disabled>结束回合</button>
+        <p>玩家总兵力: <span id="playerTroops">0</span></p>
+        <p>AI 总兵力: <span id="aiTroops">0</span></p>
+        <div class="slider-container">
+            <label for="troopRatio">分兵比例:</label>
+            <input type="range" id="troopRatio" min="10" max="100" value="50" step="10" oninput="updateSliderValue()">
+            <span id="troopRatioValue">50%</span>
+        </div>
+    </div>
+    <script src="game.js"></script>
+</body>
+</html>

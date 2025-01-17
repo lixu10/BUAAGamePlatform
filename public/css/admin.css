@@ -1,0 +1,54 @@
+/* public/css/admin.css */
+/* 后台管理页面样式 */
+.admin-section {
+    padding: 40px;
+}
+
+.admin-section h2 {
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 40px;
+}
+
+/* 表格样式 */
+.admin-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.admin-table th, .admin-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+
+.admin-table th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+.admin-table tr:hover {
+    background-color: #f9f9f9;
+}
+
+.admin-buttons button {
+    margin: 0 5px;
+    padding: 5px 10px;
+    background-color: #1890ff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.admin-buttons button:hover {
+    background-color: #40a9ff;
+}
+
+.admin-buttons .reject-button {
+    background-color: #ff4d4f;
+}
+
+.admin-buttons .reject-button:hover {
+    background-color: #ff7875;
+}

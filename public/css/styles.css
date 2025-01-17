@@ -1,0 +1,539 @@
+/* public/css/styles.css */
+/* 重置样式 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Microsoft YaHei', sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* 头部导航栏样式 */
+header {
+    background-color: #2C3E50;
+    position: relative;
+    z-index: 1001;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+}
+
+.navbar .logo {
+    font-size: 24px;
+    color: #fff;
+}
+
+.navbar .nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.navbar .nav-links li {
+    margin: 0 15px;
+}
+
+.navbar .nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.auth-buttons {
+    display: flex;
+    align-items: center;
+    color: #fff;
+}
+
+.auth-buttons span {
+    margin-right: 10px;
+}
+
+.auth-buttons button {
+    margin-left: 10px;
+    padding: 8px 16px;
+    background-color: #fff;
+    color: #4CAF50;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.auth-buttons button:hover {
+    background-color: #e7e7e7;
+}
+
+/* 汉堡菜单样式 */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.hamburger span {
+    height: 3px;
+    width: 25px;
+    background: #fff;
+    margin-bottom: 4px;
+    border-radius: 3px;
+}
+
+/* 侧边栏样式 */
+.sidebar {
+    position: fixed;
+    top: 0;
+    right: -250px;
+    width: 250px;
+    height: 100%;
+    background-color: #2C3E50;
+    padding-top: 60px;
+    transition: right 0.3s ease-in-out;
+    z-index: 1000;
+}
+
+.sidebar.active {
+    right: 0;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin: 20px 0;
+    text-align: center;
+}
+
+.sidebar ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.auth-buttons-sidebar {
+    text-align: center;
+    margin-top: 30px;
+    color: #fff;
+}
+
+.auth-buttons-sidebar span {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.auth-buttons-sidebar button {
+    margin: 5px;
+    padding: 8px 16px;
+    background-color: #fff;
+    color: #4CAF50;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.auth-buttons-sidebar button:hover {
+    background-color: #e7e7e7;
+}
+
+/* 覆盖层样式 */
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 999;
+}
+
+.sidebar.active ~ .overlay {
+    display: block;
+}
+
+/* 响应式布局 */
+@media (max-width: 768px) {
+    .navbar .nav-links {
+        display: none;
+    }
+
+    .navbar .auth-buttons {
+        display: none;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+}
+
+/* 轮播大图样式 */
+.carousel {
+    position: relative;
+    height: 400px;
+    overflow: hidden;
+}
+
+.carousel-item {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 1s ease-in-out;
+}
+
+.carousel-item.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* 网站介绍样式 */
+.introduction {
+    padding: 40px;
+    text-align: center;
+}
+
+.introduction h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.introduction p {
+    font-size: 18px;
+    color: #666;
+}
+
+/* 游戏推荐样式 */
+.games {
+    padding: 40px;
+    background-color: #f9f9f9;
+}
+
+.games h2 {
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 40px;
+}
+
+.game-item {
+    display: flex;
+    margin-bottom: 30px;
+}
+
+.game-item img {
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+    margin-right: 20px;
+}
+
+.game-info {
+    flex: 1;
+}
+
+.game-info h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.game-info p {
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+.play-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+}
+
+.play-button:hover {
+    background-color: #45a049;
+}
+
+/* 排行榜样式 */
+.leaderboard {
+    padding: 40px;
+    background-color: #fff;
+}
+
+.leaderboard h2 {
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 40px;
+}
+
+/* 排行榜容器 */
+.leaderboard-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+/* 单个排行榜 */
+.leaderboard-section {
+    width: 32%;
+    margin-bottom: 20px;
+}
+
+.leaderboard-section h3 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.leaderboard-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.leaderboard-item img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    margin-right: 15px;
+}
+
+.leaderboard-item .info {
+    flex: 1;
+}
+
+.leaderboard-item .info h4 {
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.leaderboard-item .info p {
+    font-size: 14px;
+    color: #666;
+}
+
+.leaderboard-item .play-button {
+    padding: 5px 10px;
+    font-size: 14px;
+}
+
+/* 开发者榜样式 */
+.developer-item .info p {
+    margin-bottom: 5px;
+}
+
+/* 响应式布局 */
+@media (max-width: 768px) {
+    .navbar .nav-links {
+        display: none;
+    }
+
+    .game-item {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .game-item img {
+        margin-bottom: 20px;
+    }
+
+    .leaderboard-container {
+        flex-direction: column;
+    }
+
+    .leaderboard-section {
+        width: 100%;
+    }
+}
+
+/* 玩家感受收集栏样式 */
+.feedback {
+    padding: 40px;
+}
+
+.feedback h2 {
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 40px;
+}
+
+.feedback-display {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 40px;
+}
+
+.feedback-item {
+    width: 30%;
+    background-color: #f1f1f1;
+    padding: 20px;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.feedback-item p {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.feedback-item span {
+    font-size: 14px;
+    color: #999;
+}
+
+/* 底部信息栏样式 */
+footer {
+    background-color: #001529;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    margin-top: auto;
+}
+
+/* 响应式布局 */
+@media (max-width: 768px) {
+    .navbar .nav-links {
+        display: none;
+    }
+
+    .game-item {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .game-item img {
+        margin-bottom: 20px;
+    }
+
+    .feedback-display {
+        flex-direction: column;
+    }
+
+    .feedback-item {
+        width: 100%;
+    }
+}
+
+/* 开发者计划模块样式 */
+.developer-plan {
+  background: linear-gradient(135deg, #1f4037 0%, #99f2c8 100%);
+  color: #fff;
+  padding: 100px 20px;
+  text-align: center;
+}
+
+.developer-plan .content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.developer-plan h1 {
+  font-size: 56px;
+  margin-bottom: 20px;
+  animation: fadeInDown 1s ease-out;
+}
+
+.developer-plan p {
+  font-size: 24px;
+  margin-bottom: 40px;
+  animation: fadeInUp 1s ease-out;
+}
+
+.developer-plan .btn {
+  background-color: #fff;
+  color: #1f4037;
+  padding: 15px 30px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-size: 18px;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.developer-plan .btn:hover {
+  background-color: #e0e0e0;
+  transform: scale(1.05);
+}
+
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-50px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(50px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* 用户注册登录模块样式 */
+.user-auth {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 100px 20px;
+  background-color: #fff;
+}
+
+.user-auth .auth-card {
+  background-color: #1f4037;
+  color: #fff;
+  padding: 50px;
+  border-radius: 20px;
+  text-align: center;
+  width: 300px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+}
+
+.user-auth .auth-card:hover {
+  transform: translateY(-10px);
+}
+
+.user-auth h2 {
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+.user-auth p {
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+
+.user-auth .btn {
+  background-color: #fff;
+  color: #1f4037;
+  padding: 12px 25px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+.user-auth .btn:hover {
+  background-color: #e0e0e0;
+}
+
+/* 新增：移动端响应式设计 */
+@media (max-width: 768px) {
+  .user-auth {
+    flex-direction: column; /* 改为垂直布局 */
+    padding: 50px 20px;
+  }
+  
+  .user-auth .auth-card {
+    margin-bottom: 30px; /* 增加下边距 */
+    width: 100%; /* 卡片宽度占满容器 */
+    max-width: 400px; /* 设置最大宽度 */
+  }
+}

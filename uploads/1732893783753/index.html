@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="./6.css">
+</head>
+<body>
+
+  
+        <div class="game-container">
+            <!-- 开始界面 -->
+            <div id="start-screen">
+                <div class="difficulty">
+                    <label>选择难度：
+                        <select id="difficulty">
+                            <option value="easy">简单</option>
+                            <option value="normal" selected>普通</option>
+                            <option value="hard">困难</option>
+                        </select>
+                    </label>
+                    <button onclick="startGame()">开始游戏</button>
+                </div>
+            </div>
+            <!-- 游戏界面 -->
+            <div id="game-screen" style="display: none;">
+                <div id="ddl-timer" style="font-size:20px; color:red;"></div>
+                <div id="map"></div>
+                <div class="controls">
+                    <button onclick="move('north')">北</button>
+                    <button onclick="move('west')">西</button>
+                    <button onclick="move('east')">东</button>
+                    <button onclick="move('south')">南</button>
+                </div>
+                <div class="status">
+                    <p>当前位置：<span id="position"></span></p>
+                    <p>血量：<span id="health"></span></p>
+                    <p>体力：<span id="stamina"></span></p>
+                    <p>钥匙：<span id="keys"></span></p>
+                </div>
+                <!-- 图例 -->
+                <div class="legend">
+                    <h3>图例：</h3>
+                    <ul>
+                        <li><span class="legend-color undiscovered"></span> 未到达的点</li>
+                        <li><span class="legend-color empty"></span> 没有任何东西的已到的点</li>
+                        <li><span class="legend-color treasure"></span> 宝藏点</li>
+                        <li><span class="legend-color start"></span> 出生点</li>
+                        <li><span class="legend-color tsinghua-boyfriend"></span> 清华男友</li>
+                        <li><span class="legend-color electric-bike"></span> 飞来的电动车</li>
+                        <li><span class="legend-color wumei-supermarket"></span> 物美超市</li>
+                        <li><span class="legend-color coffee-shop"></span> 咖啡店</li>
+                        <li><span class="legend-color school-hospital"></span> 校医院</li>
+                        <li><span class="legend-color treasure-map"></span> 藏宝图</li>
+                        <li><span class="legend-color airplane-key"></span> 飞机钥匙</li>
+                        <li><span class="legend-color chemical-lab"></span> 化学实验室</li>
+                        <li><span class="legend-color td-line"></span> TD线</li>
+                        <li><span class="legend-color family-area"></span> 家属区</li>
+                        <li><span class="legend-color programming-lab"></span> 程设上机</li>
+                        <li><span class="legend-color meet-ddl"></span> 遇见DDL</li>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+    
+    <script src="./game6.js"></script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="/3.css">
+</head>
+<body>
+    <section class="game-content">
+        <!-- 游戏预留位置 -->
+        <div class="game-container">
+            <!-- 这里是游戏的嵌入位置 -->
+                    <style>
+                        .container{
+                        width: 500px;
+                        height: 500px;
+                        border:0px solid #000;
+                        margin:auto;
+                        position:relative;  
+                        border: 5px solid rgb(179, 178, 177);
+                        }
+                        .brickBox{
+                        width: 500px;
+                        height: 300px;
+                        position:absolute;
+                        left: 0;
+                        top: 0;
+                        }
+                        .ball{
+                        width: 15px;
+                        height: 15px;
+                        background-color:red;
+                        border-radius:50%;
+                        position:absolute;
+                        bottom:30px;
+                        left:235px;
+                        }
+                        .slider{
+                        width: 150px;
+                        height: 30px;
+                        background-color: rgb(83, 98, 149);
+                        position:absolute;
+                        left:175px;
+                        bottom:0;
+                        }
+                    </style>
+                    <div class="container">
+                    <div class="brickBox"></div>
+                    <div class="ball"></div>
+                    <div class="slider"></div>
+                    </div>
+        </div>
+    </section>
+    <script src="./game3.js"></script>
+</body>
+</html>
